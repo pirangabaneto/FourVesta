@@ -8,23 +8,26 @@ public class PlayerController : MonoBehaviour
     public float speedWalk;
 
     private Vector2 input;
-    private Animator animator;
+    public Animator animator;
     private Rigidbody2D rb2d;
     public Vector2 newSpeed;
     
-    
+    // da outra implementacao
+    public float moveSpeed = 5f;
+    public Rigidbody2D rb;
+    Vector2 movement;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    // Start is called before the first frame update/*
+    /*void Start()
+    /*{
         animator = GetComponentInChildren<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
 
     }
-
+*/
     // Update is called once per frame
     void Update()
-    {
+    {/*
         input.x = Input.GetAxisRaw("Horizontal");
 
         //Debug.Log(input.x);
@@ -46,6 +49,18 @@ public class PlayerController : MonoBehaviour
         //newSpeed = input * speedWalk * Time.deltaTime;
         //Debug.Log(newSpeed);
         //rb2d.velocity = newSpeed;
+*/
+        //input
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+    }
+
+    void FixedUpdate() {
+        // movement
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
