@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 newSpeed;
     
     // da outra implementacao
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2f;
     public Rigidbody2D rb;
     Vector2 movement;
 
