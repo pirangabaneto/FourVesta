@@ -16,15 +16,20 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 2f;
     public Rigidbody2D rb;
     Vector2 movement;
+    public BombController bombPrefab;
 
     // Start is called before the first frame update/*
-    /*void Start()
-    /*{
-        animator = GetComponentInChildren<Animator>();
-        rb2d = GetComponent<Rigidbody2D>();
+    void Start()
+    {
+        //#animator = GetComponentInChildren<Animator>();
+       //rb2d = GetComponent<Rigidbody2D>();
+
+       // setando posicao do player
+      //# spawn = new Vector2(0,0);
+       //transform.position = new Vector3(10f,10f,0f);
 
     }
-*/
+
     // Update is called once per frame
     void Update()
     {/*
@@ -57,6 +62,10 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if(Input.GetKeyDown(KeyCode.Space)){
+            Instantiate(bombPrefab.gameObject, transform.position, transform.rotation);
+        }
     }
 
     void FixedUpdate() {
