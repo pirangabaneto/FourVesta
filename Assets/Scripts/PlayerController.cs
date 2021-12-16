@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -71,5 +72,26 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate() {
         // movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    private void OnCollissionEnter(Collider2D collision) {
+        Debug.Log("hitou");
+        if(collision.gameObject.CompareTag("Enemy")){
+            //Debug.Log(vidas + "--------------------------------------------------------------------------------");
+            if(ExplosionBehaviour.vidas == 3){
+                Destroy(GameObject.FindWithTag("coracao03"));
+                ExplosionBehaviour.vidas--;
+            }else if(ExplosionBehaviour.vidas == 2){
+                Destroy(GameObject.FindWithTag("coracao02"));
+                ExplosionBehaviour.vidas--;
+            }else if (ExplosionBehaviour.vidas == 1){
+                Destroy(GameObject.FindWithTag("coracao01"));
+                ExplosionBehaviour.vidas--;
+            }else {
+                SceneManager.LoadScene (sceneName:"Menu");
+                ExplosionBehaviour.vidas = 3;
+            }
+            //SceneManager.LoadScene (sceneName:"Menu");
+        }
     }
 }

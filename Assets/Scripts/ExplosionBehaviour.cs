@@ -11,7 +11,8 @@ public class ExplosionBehaviour : MonoBehaviour
     public Transform center;
     public float timeToLeave;
 
-    private static int vidas = 3;
+    public static int vidas = 3;
+    private static int numBombas;
 
     // Start is called before the first frame update
     void Start()

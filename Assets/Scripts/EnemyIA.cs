@@ -14,4 +14,6 @@ public class EnemyIA : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, 1.1f * speed * Time.deltaTime);
         }
     }
+
+     
 }

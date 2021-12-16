@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8229838242356638006}
   - component: {fileID: 8229838242356638000}
   - component: {fileID: 8229838242356638001}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Alien
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 8229838242835936469}
   - component: {fileID: 8229838242835936474}
   - component: {fileID: 8229838242835936475}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Enemy (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -215,6 +215,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 35
   nextWaypointDistance: 3
   enemyGFX: {fileID: 8229838242356638006}

@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ScenaDifficult : MonoBehaviour
 {
-    public static double difficult;
+    public static float difficult;
 
-    public double difficultAux;
+    public float difficultAux;
 
     public void SetDifficult()
     {

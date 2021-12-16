@@ -7,7 +7,9 @@ public class NewEnemyIA : MonoBehaviour {
 
     public Transform target;
 
-    public float speed = 200f;
+    private float speed = 50 * ScenaDifficult.difficult;
+    //private GameObject sd =  GameObject.Find("Dificult").GetComponent<ScenaDifficult>();;
+    //public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
     public Transform enemyGFX;
@@ -73,4 +75,5 @@ public class NewEnemyIA : MonoBehaviour {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
     }
+
 }
