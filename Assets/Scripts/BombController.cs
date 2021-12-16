@@ -17,7 +17,7 @@ public class BombController : MonoBehaviour
     {
         foreach (Transform side in angles)
         {
-            Debug.Log(side.position);
+            //Debug.Log(side.position);
             
         }       
         
