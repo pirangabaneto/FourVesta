@@ -7,6 +7,9 @@ TagManager:
   - Destructive
   - Enemy
   - Astronaut
+  - coracao01
+  - coracao02
+  - coracao03
   layers:
   - Default
   - TransparentFX

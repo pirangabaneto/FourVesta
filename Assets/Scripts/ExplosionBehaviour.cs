@@ -11,7 +11,7 @@ public class ExplosionBehaviour : MonoBehaviour
     public Transform center;
     public float timeToLeave;
 
-    public int vidas = 3;
+    private static int vidas = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +62,21 @@ public class ExplosionBehaviour : MonoBehaviour
             Destroy(collision.gameObject);
         }
         if(collision.gameObject.CompareTag("Astronaut")){
-            SceneManager.LoadScene (sceneName:"Menu");
+            Debug.Log(vidas + "--------------------------------------------------------------------------------");
+            if(vidas == 3){
+                Destroy(GameObject.FindWithTag("coracao03"));
+                vidas--;
+            }else if(vidas == 2){
+                Destroy(GameObject.FindWithTag("coracao02"));
+                vidas--;
+            }else if (vidas == 1){
+                Destroy(GameObject.FindWithTag("coracao01"));
+                vidas--;
+            }else {
+                SceneManager.LoadScene (sceneName:"Menu");
+                vidas = 3;
+            }
+            //SceneManager.LoadScene (sceneName:"Menu");
         }
     }
 }

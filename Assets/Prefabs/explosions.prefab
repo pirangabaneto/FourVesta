@@ -53,6 +53,7 @@ MonoBehaviour:
   vertical: {fileID: 8922489378794919100}
   center: {fileID: 5068552390435904297}
   timeToLeave: 2
+  vidas: 2
 --- !u!58 &1293521997204808740
 CircleCollider2D:
   m_ObjectHideFlags: 0
